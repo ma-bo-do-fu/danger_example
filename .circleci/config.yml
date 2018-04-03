@@ -12,7 +12,7 @@ jobs:
       Asia/Tokyo
 
     steps:
-      - checkout:
+      - checkout
       - run:
           name: install dependencies
           command: |
