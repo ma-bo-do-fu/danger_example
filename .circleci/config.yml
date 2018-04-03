@@ -6,7 +6,6 @@ jobs:
       - image: node:8
 
     environment:
-      DANGER_GITHUB_API_TOKEN: $DANGER_GITHUB_API_TOKEN
 
     timezone:
       Asia/Tokyo
