@@ -7,13 +7,11 @@ jobs:
 
     environment:
       DANGER_GITHUB_API_TOKEN: $DANGER_GITHUB_API_TOKEN
+
     timezone:
       Asia/Tokyo
 
     steps:
-      - run:
-          name: verify-version
-          command: |
       - run:
           name: install dependencies
           command: |
