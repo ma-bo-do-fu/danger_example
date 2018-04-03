@@ -20,7 +20,7 @@ jobs:
       - run:
           name: yarn run danger
           command: |
-            yarn danger
+            yarn danger ci
 
 workflows:
   version: 2
