@@ -1,8 +1,10 @@
-const { danger, warn } = require("danger");
+const { danger, warn, fail } = require("danger");
 
 // No PR is too small to include a description of why you made a change
-if (danger.github.pr.body.length < 10) {
-  warn("Please include a description of your PR changes.");
-}
+const isPatchVersion = danger.github.issue.labels.includes("patch");
+const isMinorVersion = danger.github.issue.labels.includes("minor");
+const isMajorVersion = danger.github.issue.labels.includes("major");
 
-message("hello danger");
+if (!(isPatchVersion && isMinorVersion && isMajorVersion)) {
+  fail("no semver in labels.");
+}
