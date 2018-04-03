@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  danger:
+    working_directory: ~/workspace
+    docker:
+      - image: node8
+
+    environment:
+      DANGER_GITHUB_API_TOKEN: $DANGER_GITHUB_API_TOKEN
+    timezone:
+      Asia/Tokyo
+
+    steps:
+      - run:
+          name: verify-version
+          command: |
+      - run:
+          name: install dependencies
+          command: |
+            yarn
+      - run:
+          name: yarn run danger
+          command: |
+            yarn danger
+
+workflows:
+  version: 2
+  danger:
+    jobs:
+      - danger

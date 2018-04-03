@@ -1,0 +1,14 @@
+{
+  "name": "danger_example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ma-bo-do-fu/danger_example.git",
+  "author": "ma-bo-do-fu <sby02773@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "danger": "danger"
+  },
+  "devDependencies": {
+    "danger": "^3.4.5"
+  }
+}
