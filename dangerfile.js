@@ -8,3 +8,10 @@ const isMajorVersion = danger.github.issue.labels.includes("major");
 if (!(isPatchVersion && isMinorVersion && isMajorVersion)) {
   fail("no semver in labels.");
 }
+const isPatchInTitle = danger.github.pr.title.includes("patch:");
+const isMinorInTitle = danger.github.pr.title.includes("minor:");
+const isMajorInTitle = danger.github.pr.title.includes("major:");
+const title = danger.github.pr.title;
+if (!(isPatchInTitle && isMinorInTitle && isMajorInTitle)) {
+  fail("no semver in title.");
+}
